@@ -1,8 +1,36 @@
-<?import javafx.geometry.Insets?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="sample.Controller">
+   <children>
+      <Accordion prefHeight="487.0" prefWidth="639.0">
+        <panes>
+          <TitledPane animated="false" text="Arcade Games">
+               <content>
+                  <TableView fx:id="GameTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="titleColumn" prefWidth="131.0" text="Title" />
+                      <TableColumn fx:id="releaseDateColumn" minWidth="0.0" prefWidth="83.0" text="Release Date" />
+                        <TableColumn fx:id="soldColumn" minWidth="0.0" prefWidth="132.0" text="Units solds" />
+                        <TableColumn fx:id="revWithoutIntColumn" prefWidth="149.0" text="Revenue without inflation" />
+                        <TableColumn fx:id="revWithIntColumn" prefWidth="142.0" text="Revenue with inflation" />
+                    </columns>
+                  </TableView>
+               </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Console Games">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
 </GridPane>

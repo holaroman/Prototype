@@ -1,4 +1,4 @@
-package org.sla;
+package sample;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class ArcadeGame extends ElectronicGame {
 
+    private static int currentGameNumber;
     private Double RevWithoutInf;
     private Double RevWithInf;
 
@@ -16,6 +17,12 @@ public class ArcadeGame extends ElectronicGame {
 
         this.RevWithoutInf = RevWithoutInf;
         this.RevWithInf = RevWithInf;
+    }
+
+   static void initialize (){
+
+        read("arcadeGame");
+
     }
 
     public Double getRevWithoutInf() {
@@ -41,7 +48,7 @@ public class ArcadeGame extends ElectronicGame {
         String FormatRev = new BigDecimal(this.getRevWithoutInf()).toPlainString();
         description = description + "The revenue without inflation was" + " " + FormatRev + ".";
         String Formatrev = new BigDecimal(this.getRevWithInf()).toPlainString();
-        description = description + " " + "The revenue with inflation was" + " " + Formatrev()+ ".";
+        description = description + " " + "The revenue with inflation was" + " " + Formatrev+ ".";
         return description;
     }
         static void read(String dataFilePath) {
